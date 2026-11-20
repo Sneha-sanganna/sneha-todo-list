@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple, responsive to-do list that saves tasks in your browser.">
+  <title>Daily Tasks | Sneha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Daily Tasks home"><span class="brand-mark">✓</span> daily<span>tasks</span></a>
+      <span class="storage-status"><i></i> Saved on this device</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">YOUR PERSONAL TASK SPACE</p>
+      <h1>Make room for<br><span>what matters.</span></h1>
+      <p class="subtitle">A little progress each day adds up to big results.</p>
+    </section>
+
+    <section class="task-panel" aria-label="To-do list">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">YOUR LIST</p>
+          <h2>Today's tasks</h2>
+        </div>
+        <div class="date-chip" id="today-date">TODAY</div>
+      </div>
+
+      <form id="task-form" class="task-form">
+        <label class="sr-only" for="task-input">Add a task</label>
+        <input id="task-input" type="text" maxlength="120" placeholder="What needs to get done?" autocomplete="off">
+        <button class="add-button" type="submit"><span>＋</span> Add task</button>
+      </form>
+      <p class="input-hint" id="input-hint" aria-live="polite">Press Enter or click Add task to add to your list.</p>
+
+      <div class="list-toolbar">
+        <p id="task-count" class="task-count" aria-live="polite">0 tasks left</p>
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-button" type="button" data-filter="active" aria-pressed="false">Active</button>
+          <button class="filter-button" type="button" data-filter="done" aria-pressed="false">Done</button>
+        </div>
+      </div>
+
+      <ul id="task-list" class="task-list" aria-label="Tasks"></ul>
+      <div id="empty-state" class="empty-state">
+        <div class="empty-icon">✦</div>
+        <h3>Your list is clear</h3>
+        <p>Add a task above and take the first step.</p>
+      </div>
+
+      <div class="panel-footer">
+        <span id="completed-summary">Stay focused. You've got this.</span>
+        <button id="clear-completed" class="clear-button" type="button">Clear completed</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Made for focused days.</span>
+      <span>Tasks stay in your browser using LocalStorage.</span>
+    </footer>
+  </main>
+</body>
+</html>
